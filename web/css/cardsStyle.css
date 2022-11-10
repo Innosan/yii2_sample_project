@@ -1,0 +1,104 @@
+.tracker-card {
+    width: 202px;
+    height: 240px;
+
+    background: #E96363;
+    box-shadow: 0 0 24px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+
+    color: white;
+
+    padding: 13px 0 0 17px;
+
+    transition: .3s;
+}
+
+.tracker-card:hover {
+    box-shadow: 0 0 18px -1px rgba(0, 0, 0, 0.50);
+}
+
+.card-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-heading img {
+    margin-right: 6px;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.card-content {
+    font-weight: 700;
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.wide {
+    width: 215px;
+    height: 110px;
+}
+
+.ultrawide {
+    width: 453px;
+    height: 167px;
+}
+
+.daily-tasks {
+    background: #373737;
+    color: white;
+
+    width: 247px;
+}
+
+.trackers-container {
+    width: 449px;
+
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sleep {
+    background: rgba(242, 118, 27, 0.83);
+}
+
+.water {
+    background: #77C1E1;
+}
+
+.food {
+    background: #FF92AC;
+}
+
+input[type=range] {
+    -webkit-appearance: slider-vertical;
+
+    width: 6px;
+    height: 64px;
+
+    cursor: grab;
+
+    transition: .3s;
+}
+
+input[type=range]:focus {
+    cursor: grabbing;
+
+    width: 10px;
+}
+
+.calories-inputs label {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    width: 34px;
+
+    font-weight: 300;
+}

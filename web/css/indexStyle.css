@@ -1,0 +1,13 @@
+.greeting {
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.rating-heading {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.rating-container {
+    text-align: end;
+}
