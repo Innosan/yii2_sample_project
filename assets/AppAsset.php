@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
         'css/glitchEffect.css',
         'css/indexStyle.css',
         'css/cardsStyle.css',
+        'css/tasks.css',
     ];
     public $js = [
     ];

@@ -43,8 +43,8 @@ $tracker = \app\models\DietTracker::findOne('1');
                 </div>
                 <div class="tracker-card wide water">
                     <div class="card-heading">
-                        <p class="card-title">Водичка</p>
                         <img class="card-icon" src="../../web/media/icons/Water%20Glass.svg"/>
+                        <p class="card-title">Водичка</p>
                     </div>
                     <p class="card-content">3 стакана<br>700ml.</p>
                 </div>
@@ -88,8 +88,8 @@ $tracker = \app\models\DietTracker::findOne('1');
         </div>
         <div class="daily-tasks">
             <label for="taskCheckbox">
-                покушал утром?
                 <input name="task" id="taskCheckbox" type="checkbox">
+                покушал утром?
             </label>
         </div>
 
