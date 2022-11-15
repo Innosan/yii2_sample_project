@@ -3,8 +3,6 @@
 /** @var yii\web\View $this */
 
 $this->title = 'Foodie';
-
-$tracker = \app\models\DietTracker::findOne('1');
 ?>
 <div class="site-index">
 
@@ -31,7 +29,7 @@ $tracker = \app\models\DietTracker::findOne('1');
                     <p class="card-title">Вес</p>
                 </div>
                 <img class="card-subicon" src=""/>
-                <p class="card-content"><?= $tracker['calories']?> кг.,<br>сбросить бы</p>
+                <p class="card-content">400 кг.,<br>сбросить бы</p>
             </div>
             <div class="tracker-cards-container d-flex flex-column justify-content-between">
                 <div class="tracker-card wide sleep">

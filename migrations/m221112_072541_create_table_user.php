@@ -16,8 +16,8 @@ class m221112_072541_create_table_user extends Migration
             [
                 'id' => $this->primaryKey(),
                 'username' => $this->string(40)->notNull(),
-                'password' => $this->string(32)->notNull(),
-                'auth_key' => $this->string(40)->notNull(),
+                'password_hash' => $this->string(60)->notNull(),
+                'email' => $this->string(50)->notNull()->unique(),
                 'access_token' => $this->string(40)->notNull(),
             ],
             $tableOptions
