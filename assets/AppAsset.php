@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
         'css/cardsStyle.css',
         'css/tasks.css',
         'css/about.css',
+        'css/form.css',
     ];
     public $js = [
     ];

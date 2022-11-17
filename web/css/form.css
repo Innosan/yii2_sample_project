@@ -1,0 +1,33 @@
+.tracker-create {
+    margin-top: 40px;
+}
+
+.tracker-title {
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.tracker-form div {
+    width: 30vw;
+
+    margin-bottom: 40px;
+}
+
+.control-label {
+    font-weight: bold;
+}
+.form-control {
+
+}
+
+.help-block {
+    color: #dc5e5e;
+
+    font-weight: bold;
+
+    margin-bottom: 0 !important;
+}
+
+.btn-success {
+    width: 120px;
+}

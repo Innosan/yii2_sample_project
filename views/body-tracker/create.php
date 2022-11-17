@@ -5,13 +5,11 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\BodyTracker $model */
 
-$this->title = 'Create Body Tracker';
-$this->params['breadcrumbs'][] = ['label' => 'Body Trackers', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Body Measures';
 ?>
-<div class="body-tracker-create">
+<div class="tracker-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="tracker-title"><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

@@ -4,13 +4,12 @@ use yii\helpers\Html;
 
 /** @var yii\web\View $this */
 /** @var app\models\SleepTracker $model */
-/** @var app\models\DietTracker $dietModel */
 
-$this->title = 'Create Sleep Tracker';
+$this->title = 'Sleep';
 ?>
-<div class="sleep-tracker-create">
+<div class="tracker-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="tracker-title"><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

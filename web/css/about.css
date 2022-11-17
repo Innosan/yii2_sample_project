@@ -21,6 +21,8 @@
     text-decoration: none;
     color: white;
 
+    width: 180px;
+
     background: #E96363;
 
     padding: 12px 20px;
@@ -29,10 +31,33 @@
     font-size: 20px;
 
     border-radius: 12px;
+
+    transition: .3s;
+}
+
+.about-redirections a:hover {
+    background: rgba(233, 99, 99, 0.85);
 }
 
 .about-redirections p {
     font-size: 18px;
 
     margin: 22px;
+}
+
+.a-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 400px;
+
+    margin: 0 auto 20px;
+
+    padding: 20px;
+
+    color: white;
+    background-color: rgba(45, 45, 45, 0.8);
+
+    border-radius: 16px;
 }

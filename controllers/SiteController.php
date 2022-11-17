@@ -142,6 +142,12 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    /**
+     * Displays training page.
+     *
+     * @return string
+     */
     public function actionTraining()
     {
         return $this->render('training');

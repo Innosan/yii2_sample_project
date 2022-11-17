@@ -8,18 +8,21 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="diet-tracker-form">
+<div class="tracker-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'calories')->textInput() ?>
 
-    <?= $form->field($model, 'is_eaten_breakfast')->textInput() ?>
+    <?= $form->field($model, 'is_eaten_breakfast')->checkbox() ?>
 
-    <?= $form->field($model, 'diet_date')->textInput() ?>
+    <?= $form->field($model, 'diet_date')->widget(\yii\jui\DatePicker::className(), [
+        'options' => ['class' => 'form-control'],
+        'dateFormat' => 'yyyy-MM-dd',
+    ]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Go to Dashboard', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
