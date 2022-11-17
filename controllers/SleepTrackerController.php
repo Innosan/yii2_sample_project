@@ -72,6 +72,8 @@ class SleepTrackerController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
+                \Yii::$app->session->set('sleepTracker', $model->id);
+
                 return \Yii::$app->response->redirect(['water-tracker/create']);
             }
         } else {

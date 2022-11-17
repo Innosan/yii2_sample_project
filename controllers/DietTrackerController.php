@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\DietTracker;
 use app\models\DietTrackerSearch;
 use app\models\UserTrackers;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

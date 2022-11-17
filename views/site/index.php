@@ -49,8 +49,8 @@ $trackers = \app\models\UserTrackers::findOne(Yii::$app->user->id);
                 </div>
                 <div class="tracker-card wide water">
                     <div class="card-heading">
-                        <p class="card-title">Водичка</p>
                         <img class="card-icon" src="../../web/media/icons/Water%20Glass.svg"/>
+                        <p class="card-title">Водичка</p>
                     </div>
                     <p class="card-content"><?=$trackers->waterTracker->cup_counter?> стакан(а)<br><?=(int)$trackers->waterTracker->cup_counter * 250?>ml.</p>
                 </div>
