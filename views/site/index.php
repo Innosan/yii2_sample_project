@@ -2,13 +2,19 @@
 
 /** @var yii\web\View $this */
 
+use \yii\helpers\Url;
+
+if ( Yii::$app->user->isGuest )
+    return Yii::$app->getResponse()->redirect(array(Url::to(['site/login'],302)));
+
 $this->title = 'Foodie';
 
+$trackers = \app\models\UserTrackers::findOne(Yii::$app->user->id);
 ?>
 <div class="site-index">
 
     <div class="d-flex justify-content-between mt-4">
-        <p class="greeting">Ну привет,<br>Пипа!</p>
+        <p class="greeting">Ну привет,<br><?= Yii::$app->user->identity->username?>!</p>
         <div class="rating-container">
             <p class="rating-heading mb-2">
                 Мой Рейтинг
@@ -22,6 +28,7 @@ $this->title = 'Foodie';
     </div>
 
     <div class="body-content w-75 m-auto d-flex justify-content-between">
+
         <div class="trackers-container d-flex">
             <div class="tracker-card tall body-weight">
                 <div class="card-heading">
@@ -29,7 +36,7 @@ $this->title = 'Foodie';
                     <p class="card-title">Вес</p>
                 </div>
                 <img class="card-subicon" src=""/>
-                <p class="card-content">45 кг.,<br>сбросить бы</p>
+                <p class="card-content"><?=$trackers->bodyTracker->body_weight?> кг.,<br>сбросить бы</p>
             </div>
             <div class="tracker-cards-container d-flex flex-column justify-content-between">
                 <div class="tracker-card wide sleep">
@@ -37,14 +44,15 @@ $this->title = 'Foodie';
                         <img class="card-icon" src="../../web/media/icons/moon.svg"/>
                         <p class="card-title">Сон</p>
                     </div>
-                    <p class="card-content">4 часа за сегодня,<br>довольно мало</p>
+                    <p class="card-content"><?=$trackers->sleepTracker->sleep_time?> часа(ов) за сегодня,<br>довольно мало</p>
+                    <p class="card-content">просыпался <?=$trackers->sleepTracker->wake_up_times?> раз(а)</p>
                 </div>
                 <div class="tracker-card wide water">
                     <div class="card-heading">
-                        <img class="card-icon" src="../../web/media/icons/Water%20Glass.svg"/>
                         <p class="card-title">Водичка</p>
+                        <img class="card-icon" src="../../web/media/icons/Water%20Glass.svg"/>
                     </div>
-                    <p class="card-content">3 стакана<br>700ml.</p>
+                    <p class="card-content"><?=$trackers->waterTracker->cup_counter?> стакан(а)<br><?=(int)$trackers->waterTracker->cup_counter * 250?>ml.</p>
                 </div>
             </div>
             <div class="tracker-card ultrawide mt-4 food">
@@ -86,8 +94,8 @@ $this->title = 'Foodie';
         </div>
         <div class="daily-tasks">
             <label for="taskCheckbox">
-                <input name="task" id="taskCheckbox" type="checkbox">
                 покушал утром?
+                <input name="task" id="taskCheckbox" type="checkbox">
             </label>
         </div>
 

@@ -16,6 +16,7 @@ use Yii;
  * @property BodyTracker $bodyTracker
  * @property DietTracker $dietTracker
  * @property SleepTracker $sleepTracker
+ * @property User $user
  * @property WaterTracker $waterTracker
  */
 class UserTrackers extends \yii\db\ActiveRecord
@@ -40,6 +41,7 @@ class UserTrackers extends \yii\db\ActiveRecord
             [['diet_tracker_id'], 'exist', 'skipOnError' => true, 'targetClass' => DietTracker::class, 'targetAttribute' => ['diet_tracker_id' => 'id']],
             [['sleep_tracker_id'], 'exist', 'skipOnError' => true, 'targetClass' => SleepTracker::class, 'targetAttribute' => ['sleep_tracker_id' => 'id']],
             [['water_tracker_id'], 'exist', 'skipOnError' => true, 'targetClass' => WaterTracker::class, 'targetAttribute' => ['water_tracker_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -85,6 +87,16 @@ class UserTrackers extends \yii\db\ActiveRecord
     public function getSleepTracker()
     {
         return $this->hasOne(SleepTracker::class, ['id' => 'sleep_tracker_id']);
+    }
+
+    /**
+     * Gets query for [[User]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::class, ['id' => 'user_id']);
     }
 
     /**
