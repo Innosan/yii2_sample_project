@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\DietTracker;
 use app\models\SleepTracker;
 use app\models\SleepTrackerSearch;
 use yii\web\Controller;
@@ -71,7 +72,7 @@ class SleepTrackerController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                return \Yii::$app->response->redirect(['water-tracker/create']);
             }
         } else {
             $model->loadDefaultValues();
@@ -94,6 +95,8 @@ class SleepTrackerController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            \Yii::$app->session->set('sleepTracker', $model->id);
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

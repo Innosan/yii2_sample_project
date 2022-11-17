@@ -71,7 +71,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signUp()) {
                 if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
+                    return \Yii::$app->response->redirect(['body-tracker/create']);
                 }
             }
         }

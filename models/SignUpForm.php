@@ -26,15 +26,12 @@ class SignUpForm extends Model {
     }
 
     public function signUp() {
-
-
         $user = new User();
 
         $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
 
-        var_dump($user->password_hash);
         $user->generateAuthKey();
 
         return $user->save() ? $user : null;

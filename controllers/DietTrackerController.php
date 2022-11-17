@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\DietTracker;
 use app\models\DietTrackerSearch;
+use app\models\UserTrackers;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -71,7 +72,18 @@ class DietTrackerController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                $userTrackersModel = new UserTrackers();
+
+                $userTrackersModel->user_id = \Yii::$app->user->identity->id;
+
+                $userTrackersModel->body_tracker_id = \Yii::$app->session->get('bodyTracker');
+                $userTrackersModel->sleep_tracker_id = \Yii::$app->session->get('sleepTracker');
+                $userTrackersModel->water_tracker_id = \Yii::$app->session->get('waterTracker');
+                $userTrackersModel->diet_tracker_id = $model->id;
+
+                $userTrackersModel->save();
+
+                return $this->goHome();
             }
         } else {
             $model->loadDefaultValues();

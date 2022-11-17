@@ -71,7 +71,9 @@ class BodyTrackerController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                \Yii::$app->session->set('bodyTracker', $model->id);
+
+                return \Yii::$app->response->redirect(['sleep-tracker/create']);
             }
         } else {
             $model->loadDefaultValues();

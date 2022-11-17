@@ -5,14 +5,19 @@
 use yii\helpers\Html;
 
 $this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="about-heading"><?= Yii::$app->name = "Foodie" ?></h1>
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
+    <p class="about-title">
+        Foodie - beautiful, yet lightweight health tracker,<br>that allows you to control your state, like weight, hydration level or something like that;
     </p>
 
-    <code><?= __FILE__ ?></code>
+    <div class="about-redirections">
+        <a href="login.php">Login</a>
+        <br>
+        <p>to continue, or <br></p>
+        <a href="signup.php">Sign Up</a><br>
+        <p>to create a brand new account and develop a better version of yourself!</p>
+    </div>
 </div>

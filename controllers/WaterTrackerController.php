@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\UserTrackers;
 use app\models\WaterTracker;
 use app\models\WaterTrackerSearch;
 use yii\web\Controller;
@@ -71,7 +72,14 @@ class WaterTrackerController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+//                $userTrackersModel = new UserTrackers();
+//                $userTrackersModel->bodyTracker = $model->id;
+//                $userTrackersModel->user_id =
+//                $userTrackersModel->save();
+
+                \Yii::$app->session->set('waterTracker', $model->id);
+
+                return \Yii::$app->response->redirect(['diet-tracker/create']);
             }
         } else {
             $model->loadDefaultValues();

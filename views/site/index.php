@@ -5,7 +5,7 @@
 use \yii\helpers\Url;
 
 if ( Yii::$app->user->isGuest )
-    return Yii::$app->getResponse()->redirect(array(Url::to(['site/login'],302)));
+    return \Yii::$app->response->redirect(['site/about']);
 
 $this->title = 'Foodie';
 

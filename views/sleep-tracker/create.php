@@ -4,10 +4,9 @@ use yii\helpers\Html;
 
 /** @var yii\web\View $this */
 /** @var app\models\SleepTracker $model */
+/** @var app\models\DietTracker $dietModel */
 
 $this->title = 'Create Sleep Tracker';
-$this->params['breadcrumbs'][] = ['label' => 'Sleep Trackers', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sleep-tracker-create">
 
