@@ -13,6 +13,103 @@
     transition: .3s;
 }
 
+/**
+style trainings page
+
+*/
+
+
+.card-heading-training{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 693px;
+    height: 71px;
+    background: #E96363;
+    border-radius: 13px 13px 18px 18px;
+}
+
+.trainings-container{
+    width: 700px;
+
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.training-card{
+    width: 693px;
+    height: 517px;
+
+
+
+    background: #3C3C3C;
+    box-shadow: 0 0 24px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+
+    color: white;
+
+    transition: .3s;
+}
+
+.list-card{
+    padding: 13px 0 0 17px;
+}
+
+.card-description-training{
+    width: 608px;
+    height: 189px;
+
+    display: flex;
+
+    background: rgba(18, 18, 18, 0.57);
+
+    border-radius: 9px;
+
+    padding: 17px 0 0 15px;
+
+    margin-top: 15px;
+
+}
+.training-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+.training-desc{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+.training-time{
+    width: 101px;
+    height: 25px;
+
+    background: #E96363;
+    border-radius: 6px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    padding: 0 1px 2px 14px;
+    margin-right: 37px;
+}
+
+.training-btn{
+    display: flex;
+
+}
+.card-icon-training{
+    width: 44px;
+    height: 44px;
+}
+.container-desc{
+    margin-left: 40px;
+}
+
+
 .tracker-card:hover {
     box-shadow: 0 0 18px -1px rgba(0, 0, 0, 0.50);
 }

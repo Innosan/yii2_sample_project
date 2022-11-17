@@ -3,6 +3,7 @@
 /** @var yii\web\View $this */
 
 $this->title = 'Foodie';
+
 ?>
 <div class="site-index">
 
@@ -21,7 +22,6 @@ $this->title = 'Foodie';
     </div>
 
     <div class="body-content w-75 m-auto d-flex justify-content-between">
-
         <div class="trackers-container d-flex">
             <div class="tracker-card tall body-weight">
                 <div class="card-heading">
@@ -29,7 +29,7 @@ $this->title = 'Foodie';
                     <p class="card-title">Вес</p>
                 </div>
                 <img class="card-subicon" src=""/>
-                <p class="card-content">400 кг.,<br>сбросить бы</p>
+                <p class="card-content">45 кг.,<br>сбросить бы</p>
             </div>
             <div class="tracker-cards-container d-flex flex-column justify-content-between">
                 <div class="tracker-card wide sleep">
