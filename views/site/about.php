@@ -15,11 +15,11 @@ $this->title = 'About';
 
     <div class="about-redirections">
         <div class="a-container">
-            <a href="?r=site%2Flogin">Login</a>
+            <a class="link" href="?r=site%2Flogin">Login</a>
             <p>to continue</p>
         </div>
         <div class="a-container">
-            <a href="?r=site%2Fsign-up">Sign Up</a>
+            <a class="link" href="?r=site%2Fsign-up">Sign Up</a>
             <p>to create a brand-new account<br>and develop a better version of yourself!</p>
         </div>
     </div>

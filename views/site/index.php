@@ -60,42 +60,59 @@ $trackers = \app\models\UserTrackers::findOne(Yii::$app->user->id);
                     <img class="card-icon" src="../../web/media/icons/Spoon.svg"/>
                     <p class="card-title">Хавчик</p>
                 </div>
-                <div class="input-group justify-content-between w-75 calories-inputs mt-4">
-                    <label for="mondayCalories">
-                        Mon
-                        <input id="mondayCalories" type="range">
-                    </label>
-                    <label for="tuesdayCalories">
-                        Tue
-                        <input id="tuesdayCalories" type="range">
-                    </label>
-                    <label for="wednesdayCalories">
-                        Wed
-                        <input id="wednesdayCalories" type="range">
-                    </label>
-                    <label for="thursdayCalories">
-                        Thu
-                        <input id="thursdayCalories" type="range">
-                    </label>
-                    <label for="fridayCalories">
-                        Fri
-                        <input id="fridayCalories" type="range">
-                    </label>
-                    <label for="saturdayCalories">
-                        Sat
-                        <input id="saturdayCalories" type="range">
-                    </label>
-                    <label for="sundayCalories">
-                        Sun
-                        <input id="sundayCalories" type="range">
-                    </label>
-                </div>
+                <h1><?=$trackers->dietTracker->calories?> калорий</h1>
+<!--                <div class="input-group justify-content-between w-75 calories-inputs mt-4">-->
+<!--                    <label for="mondayCalories">-->
+<!--                        Mon-->
+<!--                        <input id="mondayCalories" type="range">-->
+<!--                    </label>-->
+<!--                    <label for="tuesdayCalories">-->
+<!--                        Tue-->
+<!--                        <input id="tuesdayCalories" type="range">-->
+<!--                    </label>-->
+<!--                    <label for="wednesdayCalories">-->
+<!--                        Wed-->
+<!--                        <input id="wednesdayCalories" type="range">-->
+<!--                    </label>-->
+<!--                    <label for="thursdayCalories">-->
+<!--                        Thu-->
+<!--                        <input id="thursdayCalories" type="range">-->
+<!--                    </label>-->
+<!--                    <label for="fridayCalories">-->
+<!--                        Fri-->
+<!--                        <input id="fridayCalories" type="range">-->
+<!--                    </label>-->
+<!--                    <label for="saturdayCalories">-->
+<!--                        Sat-->
+<!--                        <input id="saturdayCalories" type="range">-->
+<!--                    </label>-->
+<!--                    <label for="sundayCalories">-->
+<!--                        Sun-->
+<!--                        <input id="sundayCalories" type="range">-->
+<!--                    </label>-->
+<!--                </div>-->
             </div>
         </div>
         <div class="daily-tasks">
             <label for="taskCheckbox">
-                покушал утром?
                 <input name="task" id="taskCheckbox" type="checkbox">
+                покушал утром?
+            </label>
+            <label for="taskCheckbox">
+                <input name="task" id="taskCheckbox" type="checkbox">
+                покушал днем?
+            </label>
+            <label for="taskCheckbox">
+                <input name="task" id="taskCheckbox" type="checkbox">
+                покушал вечером?
+            </label>
+            <label for="taskCheckbox">
+                <input name="task" id="taskCheckbox" type="checkbox">
+                покушал ночью?
+            </label>
+            <label for="taskCheckbox">
+                <input name="task" id="taskCheckbox" type="checkbox">
+                поспал?
             </label>
         </div>
 

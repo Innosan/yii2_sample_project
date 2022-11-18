@@ -4,8 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Training';
-$this->params['breadcrumbs'][] = $this->title;
+$exercises[] = app\models\Exercise::find()->indexBy('id')->all();
 ?>
 <div class="Training">
     <h1><?= Html::encode($this->title) ?></h1>
@@ -16,55 +15,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="card-heading-training">
                     <img class="card-icon-training" src="../../web/media/icons/barbell.svg"/>
                     <p class="card-title">Анигилятор вселенной</p>
+                    <a class="link" href="?r=exercise%2Fcreate">Add Exercise</a>
                 </div>
                 <div class="list-card">
-                    <div class="card-description-training">
-                        <div>
-                            <img class="card-pictures-training" src="../../web/media/pictures/image%201.png">
-                        </div>
-                        <div class="container-desc">
-                            <p class="training-title">ЖЕСТОЧАЙШИЙ
-                                БЕГ</p>
-                            <p class="training-desc">Почувствуйте силу великого сенатора Армстронга, <br>
-                                станьте поездом, сбивающим всех <br>
-                                на своем пути к успеху</p>
-                            <div class="training-btn">
-                                <p class="training-time">
-                                    1.5 часа
-                                </p>
-                                <div class="training-task">
-                                    <label for="trainingCheckbox">
-                                        <input name="task" id="trainingCheckbox" type="checkbox">
-                                        +База
-                                    </label>
+                    <?php foreach ($exercises[0] as $exercise) {?>
+                        <div class="card-description-training">
+                            <div>
+                                <img class="card-pictures-training"">
+                            </div>
+                            <div class="container-desc">
+                                <p class="training-title"><?=$exercise->attributes['title']?></p>
+                                <p class="training-desc"><?=$exercise->attributes['description']?></p>
+                                <div class="training-btn">
+                                    <p class="training-time">
+                                        <?=$exercise->attributes['time_to_complete']?> часа
+                                    </p>
+                                    <div class="training-task">
+                                        <label for="trainingCheckbox">
+                                            <input name="task" id="trainingCheckbox" type="checkbox" value="<?=$exercise->attributes['is_completed']?>">
+                                            +База
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="card-description-training">
-                        <div>
-                            <img class="card-pictures-training" src="../../web/media/pictures/image%202.png">
-                        </div>
-                        <div class="container-desc">
-                            <p class="training-title">РУБИТЬ
-                                КАТАНА ДЕРЕВО</p>
-                            <p class="training-desc">Вы - Данте, величайший убйца демонов, гроза пива и богов. <br>
-                                Рассекайте катаной саму материю, и, однажды, <br>
-                                к вам придет Кодзима и подарит ящик белого монстра.</p>
-                            <div  class="training-btn">
-                                <p class="training-time">
-                                    1.5 часа
-                                </p>
-                                <div class="training-task">
-                                    <label for="trainingCheckbox">
-                                        <input name="task" id="trainingCheckbox" type="checkbox">
-                                        +База
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php }?>
                 </div>
             </div>
         </div>
